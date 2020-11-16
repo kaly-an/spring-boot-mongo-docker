@@ -38,8 +38,7 @@ services:
     
 volumes:
   mongodb:
-    external:
-    
+        
 networks:
   springappnetwork:
-    external:
+    
