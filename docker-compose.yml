@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   springboot:
-    image: dockerhandson/spring-boot-mongo:latest
+    image: chakrk13/spring-boot-mongo:latest
     restart: always # This will be ignored if we deploy in docker swarm
     environment:
     - MONGO_DB_HOSTNAME=mongo
@@ -23,7 +23,7 @@ services:
       restart_policy:
         condition: on-failure
         delay: 10s
-        max_attempts: 5
+        max_attempts: 2
 
   mongo:
     image: mongo
@@ -38,8 +38,8 @@ services:
     
 volumes:
   mongodb:
-    external: true
+    external:
     
 networks:
   springappnetwork:
-    external: true
+    external:
